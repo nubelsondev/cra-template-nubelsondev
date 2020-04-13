@@ -1,7 +1,31 @@
 {
 	"name": "cra-template-nubelsondev",
 	"version": "0.1.0",
-	"private": true,
+	"license": "MIT",
+	"author": "Nubelson Fernandes <nubelsondev@hotmail.com",
+	"description": "A quick start Create React App template with Styled-components",
+	"main": "template.json",
+	"keywords": [
+		"react",
+		"create-react-app",
+		"cra-template",
+		"template",
+		"styled-components",
+		"layout",
+		"theme"
+	],
+	"files": [
+		"template",
+		"template.json"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nubelsondev/cra-template-nubelsondev",
+		"directory": "/"
+	},
+	"bugs": {
+		"url": "https://github.com/nubelsondev/cra-template-nubelsondev/issues"
+	},
 	"dependencies": {
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
@@ -11,8 +35,10 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"clean-files": "rm -rf ./template/public ./template/src",
+		"copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public",
+		"prepublishOnly": "yarn clean-files && yarn copy-files"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
